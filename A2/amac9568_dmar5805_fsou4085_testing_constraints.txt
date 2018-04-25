@@ -1,0 +1,42 @@
+﻿AE2 - DML Statements To Demonstrate Integrity Constraints
+
+
+-- Test constraint validCapacity
+UPDATE CarModel SET capacity = 0 WHERE make= 'Tesla' AND model = 'Model S';
+
+
+
+
+-- Test constraint validTransmission
+UPDATE Car SET transmission = 'automanual' WHERE regno='JAB210';
+
+
+-- Test constraint licenseExpiryCheck
+UPDATE Member SET licenseExpires = '2014-01-10' WHERE email='MAKEYOUROWNEMAIL@gmail.com';
+
+
+-- Test constraint titleCheck
+UPDATE Member SET title = 'mister' WHERE email='MAKEYOUROWNEMAIL@gmail.com';
+
+
+-- Test constraint dateCheck
+UPDATE Member SET birthdate = '2013-02-05' WHERE email='MAKEYOUROWNEMAIL@gmail.com';
+
+
+-- Test constraint ageCheck
+UPDATE Member SETbirthdate = '1996-07-05' WHERE email='MAKEYOUROWNEMAIL@gmail.com';
+
+
+-- Test constraint BSBlimit
+UPDATE BankAccount SET bsb = 100000000000 WHERE email='MAKEYOUROWNEMAIL@gmail.com';
+
+
+-- Test constraint accountLimit
+UPDATE BankAccount SET account = '100000000000' WHERE email='MAKEYOUROWNEMAIL@gmail.com';
+
+
+--Test trigger and constraint limiting 3 payment methods
+INSERT INTO PaymentMethod VALUES(1, 'MAKEYOUROWNEMAIL@gmail.com');
+INSERT INTO PaymentMethod VALUES(2, 'MAKEYOUROWNEMAIL@gmail.com');
+INSERT INTO PaymentMethod VALUES(3, 'MAKEYOUROWNEMAIL@gmail.com');
+INSERT INTO PaymentMethod VALUES(4, 'MAKEYOUROWNEMAIL@gmail.com');

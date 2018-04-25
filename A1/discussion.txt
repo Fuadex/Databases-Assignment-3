@@ -1,0 +1,70 @@
+PeerCar Car Sharing Database
+
+
+The corresponding E-R Diagram that relates to this page can be found at:
+
+https://creately.com/app/?diagID=im3bzncr2# 
+
+In the design process of the database for PeerCar, we have made some assumptions 
+and decisions that are based upon our own interpretations of the design brief. 
+The following are explanations of key design decisions and parts of the diagram.
+
+
+
+Ternary Relationship
+
+We have a ternary relationship between the entities “member”, “membership plan” 
+and “billing information”. The relationship we have chosen is “has” and this 
+relates to these entities because a member has just one membership plan, a member
+ also has just one default billing information just as a membership plan has 
+billing information from which it retrieves the money. 
+
+
+
+Billing System - ISA Relationship
+
+Under the billing section there is an “ISA relationship”. In the brief a user 
+can choose from up to 3 different methods of paying with one of them being a 
+default method. The way we have chosen to represent this in the diagram was with 
+the use of a total constraint. This means the user can select their payment methods 
+which have the attribute default_payment_method stored in them. This is a value, 
+such as a boolean, which lets the system know if the selected method is the default.
+
+
+Membership Plan
+
+The membership plan has 3 main attributes; title, monthly membership fee and a usage
+ fee. After some background research on already existing share car services we came 
+up with the following payment system. Usage fee incorporates various charges such as
+ an initial booking fee, daily rate, insurance excess fee, per hour charge, per km 
+charge and a penalty for exceeding booking time. The monthly membership fee is a flat
+ monthly cost that depends on the subscription selected. Loyal members who have used 
+the service for some time get a rebate which reduces this cost.
+
+
+
+Extension
+
+Generic Cars
+
+The extension required the addition of extra vehicles such as electric cars and segways 
+which was achieved by using a superclass and subclasses. Many of the attributes fall 
+under the generic “vehicle” entity and those which are specific to the vehicle type are 
+inserted as such. A disjoint and a total constraint have been placed in this section. 
+This means a vehicle must belong to one and only one of the sub entities. Furthermore, 
+the total constraint forces the superclass’s attributes (eg. Vehicle’s name) to pass on
+ to the assigned via the booking, subclass (eg. Combustion Car). The attribute ‘Charging
+ Station’  has been added to Car Bay which states whether the bay has facilities to 
+charge an electric vehicle. This is key to the implementation of generic cars as electric 
+vehicles can only park at these locations.
+
+
+Review System - Weak Entity
+
+The review system has two relationship types depending on what the member wants to do. 
+The first relationship is “submits new” which allows users to write a new review about a 
+car. A member may write none or many reviews, however each review is written by exactly 
+ONE member. The other relationship may be if a member wants to like or dislike another 
+member's review. This calls for a different relationship as they are performing a 
+different action. The rating, comment, number of likes, number of dislikes time and 
+nickname of each person are all stored as part of each review.
