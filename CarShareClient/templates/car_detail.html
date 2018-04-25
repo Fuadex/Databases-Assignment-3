@@ -1,0 +1,110 @@
+{% include 'top.html' %}
+<div class="content">
+    <div class="container details">
+        <h1 class="title">Car: {{ car[1] }}<a class="book_button" href="{{url_for('new_booking')}}?car={{car[0]}}">Book me!</a></h1>
+        <h2>Information</h2>
+        <table>
+            <tr>
+                <td>RegNumber</td>
+                <td> {{ car[0] }}</td>
+            </tr>
+            <tr>
+                <td> Make </td>
+                <td> {{ car[2] }}</td>
+            </tr>
+            <tr>
+                <td> Model </td>
+                <td> {{ car[3] }} </td>
+            </tr>
+            <tr>
+                <td> Year </td>
+                <td> {{ car[4] }} </td>
+            </tr>
+            <tr>
+                <td> Tramsmission </td>
+                <td> {{ car[5] }} </td>
+            </tr>
+            <tr>
+                <td> Category </td>
+                <td> {{ car[6] }} </td>
+            </tr>
+            <tr>
+                <td> Capacity </td>
+                <td> {{ car[7] }} </td>
+            </tr>
+            <tr>
+                <td> Car Bay </td>
+                <td><a href="{{url_for('list_bays')}}?bay={{car[8]}}"> {{ car[8] }}</a></td>
+            </tr>
+
+        </table>
+        <h2>Availability Today</h2>
+        <h3> AM </h3>
+        <table>
+            <tr>
+                <td>Times</td>
+                <td>12am</td>
+                <td>1am</td>
+                <td>2am</td>
+                <td>3am</td>
+                <td>4am</td>
+                <td>5am</td>
+                <td>6am</td>
+                <td>7am</td>
+                <td>8am</td>
+                <td>9am</td>
+                <td>10am</td>
+                <td>11am</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>{{ availability[0] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[1] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[2] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[3] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[4] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[5] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[6] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[7] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[8] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[9] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[10] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[11] }}&nbsp &nbsp &nbsp &nbsp</td>
+            </tr>
+        </table>
+        <h3> PM </h3>
+        <table>
+            <tr>
+                <td>Times</td>
+                <td>12pm</td>
+                <td>1pm</td>
+                <td>2pm</td>
+                <td>3pm</td>
+                <td>4pm</td>
+                <td>5pm</td>
+                <td>6pm</td>
+                <td>7pm</td>
+                <td>8pm</td>
+                <td>9pm</td>
+                <td>10pm</td>
+                <td>11pm</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>{{ availability[12] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[13] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[14] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[15] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[16] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[17] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[18] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[19] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[20] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[21] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[22] }}&nbsp &nbsp &nbsp &nbsp</td>
+                <td>{{ availability[23] }}&nbsp &nbsp &nbsp &nbsp</td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% include 'bottom.html' %}

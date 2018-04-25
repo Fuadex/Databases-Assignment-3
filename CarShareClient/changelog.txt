@@ -1,0 +1,49 @@
+An explanation of changes made to files outside of the main database.py
+
+FILE: routes.py
+CHANGE: Get car availability
+DETAILS: In the list_cars function code was added to call a new function; get_car_availability from the database.py file. 
+This gets the cars availability for the current day and loads it into the car_details.html file which displays it to the user.
+
+FILE: routes.py
+CHANGE: Update session homebay
+DETAILS: A line of code was added to call a new update_session_homebay function in the database.py file. This stores the new 
+homebay value in the session variable.
+
+FILE: routes.py
+CHANGE: Update session stat number of bookings
+DETAILS: A line of code was added to call a new update_session_stat_nrofbookings function in the database.py file. This 
+updates the session value to reflect the current number of bookings.
+
+FILE: routes.py
+CHANGE: New booking error messages and redirect
+DETAILS: In the new_booking function elif statements were added to display a new message "Car is already booked by another 
+member, or you already have a booking, at this time", if the car or user is already booked. This is more informative for the
+user than a basic error message. The url redirect after a successful booking was also changed to reflect the design brief. It
+now links to a summary screen of the successful booking.
+
+FILE: car_details.html
+CHANGE: Availability for today
+DETAILS: Two new tables were created which displays the result from the get_car_availability function in the database.py file.
+This information is displayed the table with the times printed for the current day and whether the car is booked or available.
+
+FILE: bay_details.html
+CHANGE: Walkscore and map url
+DETAILS: Walkscore and map url were moved from the car details page to the car bay page as in the brief and the fact that
+ they are more relevant when displayed there. The HTML was slightly adjusted to make the url as a clickable link which opens 
+in a new tab.
+
+FILE: bay_list.html
+CHANGE: Message when no search results
+DETAILS: An if statement has been added to the file to display a short message when there are no bays matching the users search.
+This is a small but important design detail to let the user know the search has been carried out but no results were found.
+
+FILE: main.js
+CHANGE: New file created in static/scripts folder
+DETAILS: A small javascript file was created to hold a javascript function which limits the date picker on the 'new booking' page.
+This prevents the users from making a booking in the past by greying out past dates so the cannot be selected.
+
+FILE: top.html
+CHANGE: Added script line to link the new main.js file
+DETAILS: An extra line of code was added to link the new main.js file to the html. This means the function that restricts the
+datepicker when making a new booking can be found and called when necessary.
